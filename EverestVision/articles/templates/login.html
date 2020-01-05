@@ -1,0 +1,28 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Everest Vision</title>
+  <link href="{%static 'css/styleform.css'%}" rel="stylesheet">
+  <script type="text/javascript" src="{%static 'javascript/javascript.js'%}"></script>
+</head>
+<body>
+	
+<form method="post" action="" id="form_id" >
+{%csrf_token%}
+  <h3 id="logo">Log In</h3>
+
+  <label for="username">Username</label>
+  <input type="text" id="username" name="username" placeholder="Type in your username.." autocomplete="off" required />
+
+  <label for="password">Password</label>
+  <input type="password" id="password" name="password" placeholder="Enter your password.." autocomplete="off" required />
+
+  <a class="forgot" href="#">Forgot Password?</a>
+
+  <input type="submit" name="submit" value="Log In" onclick="login()" />
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,200 @@
+{% load static%}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Everest Vision</title>
+  <link href="{%static 'css/style.css'%}" rel="stylesheet">
+</head>
+<body>
+	<div id="home">
+
+	<div class="header">
+		<img src="{% static 'photo/logo.png'%}" width="130" height="110">
+	</div>
+
+	<div class="nav">
+		<ul>
+        <li><a class="navs active" href="AdminDashBoard">Home</a></li>
+        <li><a class="navs" href="#AddEmployee">Add Empolyee</a></li>
+        <li><a class="navs" href="#EmployeeDetails">Empolyee Details</a></li>
+        <li><a class="navs" href="#CustomerDetails">Customer Details</a></li>
+        </ul>
+	</div>
+</div>
+  
+
+    <div id="AddEmployee">
+	    <fieldset style="font-size:30px;"><legend>Add Employee</legend>
+	    <form class="contact-form" method="post" action="EmployeeRegistrations">
+        {% csrf_token %}
+        <div id="first">
+		    <li>First Name  &nbsp;&nbsp;&nbsp;&nbsp; :<input id="input_submit" type="text" name="first_name"  ><br/></li>
+		    <li>Last Name  &nbsp;&nbsp;&nbsp;&nbsp;  :<input id="input_submit" type="text" name="lastname"  ><br/></li>
+		   <li>Address &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:<input id="input_submit" type="text" name="address" ><br/></li>
+       <li>Contact  &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp; :<input id="input_submit" type="text" name="contact" ><br/></li>
+		</div>
+
+	    <div id="second">
+	         
+	        <li>Email&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;:<input id="input_submit" type="text" name="email" size="30"><br/></li>
+	        <li> DOB  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     :<input id="input_submit" type="text" name="dob" placeholder="YYYY-MM-DD"><br></li>
+          <li>Join Date &nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp; :<input id="input_submit" placeholder="YYYY-MM-DD" type="text" name="joiningdate"><br/></li>
+	        <li> Specification &nbsp;&nbsp;&nbsp;:<select name="specification" style="margin-left: 20px;">
+              <option value="PhotoGrapher">PhotoGrapher</option>
+              <option value="VideoGrapher">VideoGrapher</option>
+              <option value="PhotoGrapher and VideoGrapher">Both</option>
+              </select><br/></li>
+	    </div>
+	                           
+	    <div id="button" style="padding-top:20%;">
+        <input style="background: green;" type="Submit" class="button" value="Submit">&nbsp;
+		   <input style="background: red;" type="reset" class="button" value="Cancel" id="Action">
+	    </div>
+	    </form>
+        </fieldset>
+	                        
+    </div>
+
+    
+    <div id="EmployeeDetails">
+         <fieldset><legend>Employee Details</legend> 
+         <div>
+         <form>
+         <div><table><td>Enter User Name </td><td></td><td><input type="text" name="searchValue"></td><td><input type="submit" name="Action" value="Search"></td></table></div>
+         </form>
+         </div><br>
+         <div style="overflow-x:auto;">
+         <table border="1" style="padding:20px;">
+         <tr style="height:50px;width:30px;">
+         <thead>
+               <th>Employee Id</th>
+               <th>First Name</th>
+               <th>Last Name</th>
+               <th>Address</th>
+               <th>Contact</th>
+               <th>Email</th>
+               <th>Joining Date</th>
+               <th>Date Of Birth</th>
+               <th>Specification</th>
+               <th>Action</th>
+              </thead>
+         </tr>
+         {%for employee in employee%}
+
+         <tr>
+               <td>{{employee.employee_id}}</td>
+               <td>{{employee.first_name}}</td>
+               <td>{{employee.last_name}}</td>
+               <td>{{employee.address}}</td>
+               <td>{{employee.contact}}</td>
+               <td>{{employee.email}}</td>
+               <td>{{employee.joiningdate}}</td>
+               <td>{{employee.dob}}</td>
+               <td>{{employee.specification}}</td>
+               <td>
+                 <a href="/edit/{{employee.employee_id}}">Edit</a>&nbsp;|&nbsp;<a href="/delete/{{employee.employee_id}}">Delete</a>
+               </td>
+         </tr>
+         {%endfor%}
+         </table>
+         </div>
+         </fieldset> 
+   </div>    
+
+
+    <div id="CustomerDetails">
+          <fieldset><legend>Booking Details</legend> 
+          <div>
+          <form>
+          <div>
+          <table><td>Enter  Name </td><td></td><td><input type="text" name="searchValue"></td><td><input type="submit" name="Action" value="Search"></td></table>
+          </div>
+          </form>
+          </div>
+          <table border="1" style="padding:20px;">
+          <tr style="height:50px;width:30px;">
+         <thead>
+               <th>Customer Id</th>
+               <th>First Name</th>
+               <th>Last Name</th>
+               <th>Address</th>
+               <th>Contact</th>
+               <th>Email</th>
+               <th>Booking Date</th>
+               <th>Function</th>
+               <th>Action</th>
+              </thead>
+         </tr>
+         {%for customer in customer%}
+
+         <tr>
+           <tbody>
+               <td>{{customer.Customer_id}}</td>
+               <td>{{customer.first_name}}</td>
+               <td>{{customer.last_name}}</td>
+               <td>{{customer.address}}</td>
+               <td>{{customer.contact}}</td>
+               <td>{{customer.email}}</td>
+               <td>{{customer.bookingDate}}</td>
+               <td>{{customer.functionName}}</td>
+               <td>
+                 <a href="">Edit</a>&nbsp;|&nbsp;<a href="">Delete</a>
+               </td>
+
+           </tbody>
+         </tr>
+         {%endfor%}
+          </table>
+          </fieldset> 
+          </div>
+    </div>
+
+     <div id="Message">
+          <fieldset><legend>Message</legend> 
+          <div>
+          <form>
+          <div>
+          </div>
+          </form>
+          </div>
+          <table border="1" style="padding:20px;">
+          <tr style="height:50px;width:30px;">
+         <thead>
+              <th>ID</th>
+               <th>Name</th>
+               <th>Email</th>
+               <th>Subject</th>
+               <th>Message</th>
+               <th>Action</th>
+              </thead>
+         </tr>
+         {%for contact in contact%}
+
+         <tr>
+           <tbody>
+               <td>{{contact.id}}</td>
+               <td>{{contact.name}}</td>
+               <td>{{contact.email}}</td>
+               <td>{{contact.subject}}</td>
+               <td>{{contact.message}}</td>
+               <td>
+                 <a href="">Response</a>
+                            </td>
+
+           </tbody>
+         </tr>
+         {%endfor%}
+          </table>
+          </fieldset> 
+          </div>
+    </div>
+
+    <div id="footer">
+      <h3>@Copyrights are preserved</h3>
+    </div>
+    <div id="logoutbutton">
+    	<a href="&^"><button class="logout">Logout</button></a>
+    </div>
+    	<script type="text/javascript" src="javascript/javascript.js"></script>
+</body>
+</html>

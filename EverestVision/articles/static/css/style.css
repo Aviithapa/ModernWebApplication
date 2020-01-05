@@ -1,0 +1,653 @@
+body
+
+{
+  font-family: serif;
+  height:100%;
+    <!--background:   #0000FF;
+      background: -webkit-linear-gradient(bottom,   #0000FF, #d43f8d)
+--!>
+}
+#home{
+  width: 100%;
+  height:150px;
+}
+.header
+{
+	width:30%;
+	height:100px;
+	float:left;
+}
+/*Navigation Bar*/
+.nav
+{
+
+	width:70%;
+	height:100px;
+  float: left;
+}
+.nav ul {
+  list-style-type: none;
+  padding-left: 10%;
+  overflow: hidden;
+  font-size: 20px;
+
+}
+
+.nav li {
+  float: left;
+}
+
+.nav li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 20px 40px;
+  margin-left: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav li a:hover {
+  background-color:white;
+}
+.button {
+  width:150px;
+  background-color: Red; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.Login {
+  background-color : Blue;
+  color: white;
+  padding: 20px 30px;
+  border-radius: 4px;
+  border-color: Blue; 
+  font-size: 16px; 
+  font-weight: bold;
+}
+
+#loginButton {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+}
+.container {
+  margin: 0 auto;
+}
+.centered {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center; 
+  font-size: 40px;
+  color:blue;
+  font-family: bold;
+}
+#about{
+  width:100%;
+  height:500px;
+  margin-top:5px;
+  text-align: left;
+}
+#photographer{
+  float:left;
+  width:35%;
+  height:250px;
+}
+#intro{
+float:left;
+width:60%;
+height:300px;
+margin-left:30px;
+}
+#aboutcompany{
+  float:left;
+width:100%;
+height:100px;
+margin:20px 0px 0px 30px;
+
+}
+#service{
+  width:100%;
+  height:450px;
+}
+.photo{
+ width:300px;
+ height:200px;
+}
+#service h1{
+  margin-left:20px;
+  font-size:40px; 
+}
+.photographi{
+  width:25%;
+  height:auto;
+  float:left;
+}
+.VideoGraphy{
+   width:25%;
+  height:auto;
+  float:left;
+}
+.PartyPlanning{
+   width:25%;
+  height:auto;
+  float:left;
+}
+.DjBooking{
+  width:25%;
+  height:auto;
+  float:left;
+}
+.text {
+  text-align: center;
+  margin-left: -80px;
+}
+#galary{
+  width:100%;
+  height: 1210px;
+  margin-top: 10px;
+}
+#galaryContent{
+  width:100%;
+  height:200px;
+  background-color: rgba(100,0,0,1);
+  font-size: 20px;
+  color:white;
+}
+#galaryContent h1{
+  margin-left: 20px;
+}
+.Gallary{
+  height:400px;
+  width:245px;
+}
+#photos{
+  height:500px;
+  margin-top: 20px;
+}
+#Book{
+  height:400px;
+  width:100%;
+  text-align: center;
+  background-color:black;
+  color:white;
+}
+#Book p{
+  padding-top:5%;
+  font-size: 20px;
+}
+#video{
+  width:100%;
+  height:500px;
+  background-image: url("../photo/video.jpg");
+  margin-top: 5px;
+}
+.video{
+  width:500px;
+  height:300px;
+}
+#promo 
+{
+  margin: 0 0 0 5%;
+  padding-top:5%;
+}
+#promo video{
+  margin-left:10%;
+}
+#contact
+{
+	height:550px;
+	width:100%;
+	margin-top:10px;
+	background-color: rgba(0, 0, 0);
+  color: white;
+}
+#contactform h1
+{
+  margin-left:10%;
+  font-size: 30px;
+  padding-top: 50px;
+}
+#contactform h3
+{
+  margin-left:13%;
+}
+#contactform{
+  width:70%;
+  height:auto;
+  float: left;
+}
+#contactform form{
+  margin-left: 13%;
+}
+#contactform form input {
+  position:relative;
+  font-size: 1.5em;
+  padding-left: 8px;
+  background-color:rgba(69, 69, 69, 0.8);
+  border-color:black;
+  color: white;
+  
+ }
+  #contactform form textarea {
+  position:relative;
+  font-size: 1.5em;
+  padding-left: 5px;
+  background-color:rgba(69, 69, 69, 0.8);
+  }
+
+#contactform form button{
+  height:40px;
+  width:20%;
+  font-size: 15px;
+  background-color: red;
+  border: none;
+  color:white;
+}
+#contactform form button:hover{
+  background-color: green;
+   border: none;
+}
+
+#address{
+  width:30%;
+  height:auto;
+  padding-top:10%;
+  float: left;
+}
+.footer
+{
+  width: 100%;
+  height: 50px;
+  text-align: center;
+}
+
+
+/* The popup form - hidden by default */
+.form-popup {
+  width:100%;
+  height:100%;
+  display: none;
+  position: fixed;
+  top:0;
+  right:0;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+
+}
+
+/* Add styles to the form container */
+.form-container {
+  width: auto;
+  height: 100%;
+  padding: 10px;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5);
+  font-size: 20px;
+  color:white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text]{
+  width:250px;
+  border-radius: 4px;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+  padding-left: 20px;
+  opacity: 0.8;
+  bottom: 0;
+  
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+#button
+{
+  margin-left: 25%;
+}
+
+#full{
+    background-repeat: no-repeat;
+    max-width: 100%;
+    max-height:100%;
+  }
+
+#login {
+  margin: 0 auto;
+  margin-left: 40%;
+}
+
+#login form {
+  position: absolute;
+  bottom: 10%;
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1;
+  width: 30%;
+  height:auto;
+  text-align: center; 
+  font-size: 30px;
+}
+
+/*Admin DashBoard*/
+body{
+}
+#content{
+  float:left;
+  width:98%;
+  height:auto;
+  margin-top:20px;
+}
+.active, .navs:hover {
+ color: blue;
+}
+@media screen and (max-width: 1375px) {
+  .header{
+    width:100%;
+    height:auto;
+  }
+  .nav{
+    width:100%;
+    height:auto;
+  }
+  .nav ul{
+     margin: 0;
+  padding: 0;
+  overflow: hidden;
+  } 
+ 
+
+.content {
+    margin-top: 10px;
+  }
+  .centered {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center; 
+  font-size: 20px;
+  color:blue;
+  font-family: bold;
+}
+#service{
+        width:100%;
+        height:1100px;
+      }
+.photo{
+        width:100%;
+        height:350px;
+      }
+       .text{
+        
+        margin-left: 5px;
+      }
+       .photographi{
+        width:45%;
+        height:500px;
+        margin-left: 5%;
+      }
+      .VideoGraphy{
+        width:45%;
+        height:500px;
+        margin-left: 5%;
+      }
+      .PartyPlanning{
+         width:45%;
+        height:500px;
+        margin-left: 5%;
+      }
+      .DjBooking{
+         width:45%;
+        height:500px;
+        margin-left: 5%;
+      }
+        #galary{
+        width:100%;
+        height:2000px;
+        margin-top: 10px;
+      }
+      .Gallary{
+        width:350px;
+        height:500px;
+      }
+      #
+}
+@media screen and (max-width:900px){
+  .header{
+    width:100%;
+    height:auto;
+  }
+  .nav{
+    width:100%;
+    height:auto;
+  }
+  .nav ul{
+    margin-left: 0px; 
+  } 
+  .nav li {
+  float: left;
+  width:100%;
+  height:auto;
+  text-align: left;
+}
+
+.nav li a {
+  display: block;
+  margin-left: 0px;
+  padding-left:0px;
+  font-weight: bold;
+}
+.content {
+    margin-top: 10px;
+  }
+  .centered {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+}
+#service{
+        width:100%;
+        height:1000px;
+      }
+.photo{
+        width:100%;
+        height:300px;
+      }
+
+.Gallary{
+  width:200px;
+  height: 300px;
+}
+
+}
+@media screen and (max-width:600px) {
+      #service{
+        width:100%;
+        height:2000px;
+      }
+      .photo{
+        width:80%;
+        height:300px;
+      }
+      .photographi{
+        width:90%;
+        height:500px;
+      }
+      .text{
+        width: 90%;
+        height:300px;
+        text-align: center;
+      }
+      .VideoGraphy{
+        width:90%;
+        height:500px;
+      }
+      .PartyPlanning{
+         width:90%;
+        height:500px;
+      }
+      .DjBooking{
+         width:90%;
+        height:500px;
+      }
+      #galary{
+        width:100%;
+        height:1100px;
+        margin-top: 10px;
+      }
+      .Gallary{
+        width:150px;
+        height:200px;
+      }
+      #video{
+        width:100%;
+        height:725px;
+        margin-top: 5px;
+        background-repeat: no-repeat;
+      }
+      #promo video{
+        margin-left:0px;
+      }
+      .video{
+        width:400px;
+        height:275px;
+      }
+      #contact
+      {
+        height:1000px;
+      }
+      #contactform{
+        width:100%;
+      }
+      #address{
+        margin-left: 20%
+      }
+
+}
+
+
+#full{
+  background-image: url("promo.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+/*Admnin Login page*/
+#AddEmployee{
+  width:100%;
+  height:100%;
+
+}
+#AddEmployee fieldset{
+  height:auto;
+}
+#first{
+  width:50%;
+  height:auto;
+  float:left;
+  font-size: 20px;
+}
+#first li{
+  margin-top: 20px;
+   list-style-type: none;
+}
+#second{
+  width:50%;
+  height:auto;
+  float:left;
+  font-size: 20px;
+}
+#second li{
+  margin-top: 20px;
+   list-style-type: none;
+}
+ #input_submit {
+        height: 30px;
+        width: 50%;
+        margin-left: 20px;
+    }
+    #Action{
+      width:30%;
+      height:50px;
+    }
+
+#EmployeeDetails{
+  width:100%;
+  height: auto;
+  margin-bottom: 80px;
+  margin-top: 10%;
+}
+#CustomerDetails{
+  width:100%;
+  height: auto;
+  margin-bottom: 80px;
+  margin-top: 10%;
+}
+.logout {
+    background-color: Red;
+    color: white;
+    padding: 20px 30px;
+    border-radius: 4px;
+    border-color: Blue;
+    font-size: 16px;
+    font-weight: bold;
+      cursor: pointer;
+}
+#logoutbutton{
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+
+}

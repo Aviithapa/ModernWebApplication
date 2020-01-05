@@ -1,0 +1,38 @@
+{%load static%}
+  <link href="{%static 'css/style.css'%}" rel="stylesheet">
+<form method="post" action="/update/{{employees.employee_id}}" enctype="multipart/form-data">
+{% csrf_token %}
+<div id="AddEmployee">
+	    <fieldset style="font-size:30px;"><legend>Add Employee</legend>
+	    <form class="contact-form" method="post" action="EmployeeRegistrations">
+        {% csrf_token %}
+        <div id="first">
+		    <li>First Name  &nbsp;&nbsp;&nbsp;&nbsp; :<input id="input_submit" type="text" name="first_name" value={{employees.first_name}} ><br/></li>
+		    <li>Last Name  &nbsp;&nbsp;&nbsp;&nbsp;  :<input id="input_submit" type="text" name="lastname" value={{employees.last_name}} ><br/></li>
+		   <li>Address &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:<input id="input_submit" type="text" name="address" value={{employees.address}}><br/></li>
+       <li>Contact  &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp; :<input id="input_submit" type="text" name="contact" value={{employees.contact}}><br/></li>
+		</div>
+
+	    <div id="second">
+	         
+	        <li>Email&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;:<input id="input_submit" type="text" name="email"  value={{employees.email}}><br/></li>
+	        <li> DOB  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     :<input id="input_submit" type="text" name="dob" placeholder="YYYY-MM-DD" value={{employees.dob}}><br></li>
+          <li>Join Date &nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp; :<input id="input_submit" placeholder="YYYY-MM-DD" type="text" name="joiningdate" value={{employees.joiningdate}}><br/></li>
+	        <li> Specification &nbsp;&nbsp;&nbsp;:<select name="specification" style="margin-left: 20px;" value={{employees.specification}}>
+              <option value="PhotoGrapher">PhotoGrapher</option>
+              <option value="VideoGrapher">VideoGrapher</option>
+              <option value="PhotoGrapher and VideoGrapher">Both</option>
+              </select><br/></li>
+	    </div>
+	                           
+	    <div id="button" style="padding-top:20%;">
+        <input style="background: green;" type="Submit" class="button" value="Update">&nbsp;
+		   <input style="background: red;" type="reset" class="button" value="Cancel" id="Action">
+	    </div>
+	    </form>
+        </fieldset>
+	                        
+    </div>
+
+<button type="submit">submit</button>
+</form>

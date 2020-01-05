@@ -1,0 +1,175 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Everest Vision</title>
+	<link rel="stylesheet" type="text/css" href="{%static 'css/style.css'%}">
+</head>
+<body>
+<div id="home">
+	<div class="header">
+		<img src="{%static 'photo/logo.png'%}" width="130" height="110">
+	</div>
+	<div class="nav">
+		<ul>
+        <li><a class="active" href="">Home</a></li>
+        <li><a href="#service">Service</a></li>
+        <li><a href="#galary">Gallary</a></li>
+        <li><a href="#Book">Book</a></li>
+        <li><a href="#video">Clips</a></li>
+        <li><a href="#contact">Contact</a></li>
+		</ul>
+	</div>
+</div>
+
+<div id="loginButton">
+<a href="login"><button class="Login">Login</button></a>
+</div>
+<div class="container">
+
+  <img src="{%static 'photo/wedding.jpg'%}" alt="Couple" style="width:100%; height:100%;">
+    <div class="centered">
+		<strong><p>A bond between a man and women<br>
+           Capture all the moment of the bond with us<br>
+              Everest Vision<br>
+             Vision of the moment which is in memory last long 
+        </p></strong>
+	</div>
+</div>
+			
+
+	<div id="service" >
+          <h1>What we do?</h1>
+           
+			<div class="photographi">
+					<img class="photo" src="{%static 'photo/marriage.jpg'%}" alt="marriage">
+					<div class="text">
+				    <h2>Photogrphy</h2>
+				    <p>We caputure your precious one time moment <br>occur in your life</p>
+				    </div>
+	        </div>
+
+			<div class="VideoGraphy">
+				
+				<img class="photo" src="{%static 'photo/video.jpeg'%}" alt="marriage">
+			    <div class="text">
+				    <h2>Photogrphy</h2>
+				    <p>We caputure your precious one time moment <br>occur in your life</p>
+				    </div>    
+			</div>
+
+
+			<div class="PartyPlanning">
+                
+			     <img class="photo" src="{%static 'photo/party4.jpg'%}" alt="Party">
+			     
+			     <div class="text">
+				    <h2>Photogrphy</h2>
+				    <p>We caputure your precious one time moment <br>occur in your life</p>
+				    </div>
+			</div>
+
+			<div class="DjBooking">
+				
+				<img class="photo" src="{%static 'photo/birthday.jpg'%}" alt="birthday">
+				<div class="text">
+				    <h2>Photogrphy</h2>
+				    <p>We caputure your precious one time moment <br>occur in your life</p>
+				    </div>
+			</div>
+
+	</div>
+
+	<div id="galary">
+			<div id="galaryContent">
+				<h1>Gallary</h1>
+			</div>
+			<div id="photos">
+			<img class="Gallary" src="{%static 'photo/1.jpg'%}">
+			<img class="Gallary" src="{%static 'photo/2.jpeg'%}">
+			<img class="Gallary" src="{%static 'photo/3.jpg'%}">
+			<img class="Gallary" src="{%static 'photo/4.jpg'%}">
+	        <img class="Gallary"  src="{%static 'photo/5.jpg'%}">
+			<img class="Gallary"  src="{%static 'photo/6.jpg'%}">
+			<img class="Gallary" src="{%static 'photo/7.jpg'%}">
+			<img class="Gallary" src="{%static 'photo/8.jpeg'%}">
+	        </div>
+
+	</div>
+	<div id="Book">
+		<h1><p>For Booking you directly call us or fill up our form<br><br>
+		         To fill form please click this button<br><br>
+         <button class="button" style="cursor:pointer" onClick="openForm()">Book Now</button><br><br>
+		   Otherwise you can directly Contact us in this number</p></h1>
+		                   <h1>9848749911</h1>
+	</div>
+<div id="video">
+	<div id="promo">
+		<video  controls class="video">
+        <source  src="{%static 'photo/promo1.mp4'%}" type="video/mp4">
+        </video>
+        <video  controls class="video">
+        <source  src="{%static 'photo/promo2.mp4'%}" type="video/mp4">
+        </video>
+	</div>
+</div>
+
+<div id="contact">
+	<div id="contactform">
+	<h1>Need to contact us?</h1>
+	<h3>We are here to help you. Please write your message and send us.</h3>
+	<form class="contact-form" method="post" action="contact_form_submission">
+		{% csrf_token %}
+		<input type="text" placeholder="Name" name="name"  required>
+		<input type="text" placeholder="Email" name="email"  required><br><br><br>
+        <input type="text" placeholder="Subject" name="subject" required><br><br><br>
+		<textarea type="text" name="message" placeholder="Write message" style="height:150px; width:72%;
+	   "></textarea><br><br><br>
+	   <button id="sendMessage">Send Message</button>
+	</form>
+</div>
+<div id="address">
+	<h1>Address Info</h1>
+	<p>
+		Everest Vision<br>
+		Tripura, Baitadi<br>
+		Nepal<br>
+		Telephone: 9848749911<br>
+		Email : birendrarana15@ev.com<br>
+
+	</p>
+	</div>
+</div>
+
+
+
+
+
+	<div class="form-popup" id="myForm">
+	  <form method="post" action="CustomerRegistrations" class="form-container">
+	  	{% csrf_token %}
+	      First Name:<input type="text" name="first_name">  <br>
+	      Last Name:<input type="text" name="last_name"> <br>
+	      Address:<input type="text" name="address"> <br>
+	      Contact:<input type="text" name="contact"> <br>
+	      Email:<input type="text" name="email"> <br>
+	      Booking Date:<input type="date" name="bookingDate"> <br>
+	      Function:<input type="text" name="functionName"><br>
+
+	   <div id="button">
+	    <button type="submit" class="btn">Submit</button>
+	    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+	  </div>
+	  </form>
+	</div>
+
+		
+</div>
+
+
+
+	
+</div>
+<script type="text/javascript" src="{%static 'javascript/javascript.js'%}"></script>
+</body>
+</html>
